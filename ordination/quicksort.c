@@ -1,23 +1,6 @@
 #include <stdio.h>
+#include "util.c"
 #define MAX 10
-
-void swap(int *a, int *b);
-void quicksort(int *v, int size);
-void print_array(int *v, int size);
-
-int main() {
-  int v[MAX] = { 3, 6, 8, 10, 45, 2, 1, 90, 6, 12 };
-  int i;
-
-  printf("Before: "); print_array(v, MAX);
-
-  quicksort(v, MAX);
-
-  printf("After:  "); print_array(v, MAX);
-
-  return 0;
-}
-
 
 void quicksort(int *v, int size) {
   if(size <= 1) return;
@@ -36,16 +19,15 @@ void quicksort(int *v, int size) {
   quicksort(v+left, size-left);
 }
 
-void swap(int *a, int *b) {
-  int aux = *a;
-  *a = *b;
-  *b = aux;
-}
-
-void print_array(int *v, int size) {
+int main() {
+  int v[MAX] = { 3, 6, 8, 10, 45, 2, 1, 90, 6, 12 };
   int i;
-  for(i = 0; i < size; ++i) {
-    printf("%d ", v[i]);
-  }
-  printf("\n");
+
+  printf("Before: "); print_array(v, MAX);
+
+  quicksort(v, MAX);
+
+  printf("After:  "); print_array(v, MAX);
+
+  return 0;
 }
