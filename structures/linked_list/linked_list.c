@@ -53,8 +53,8 @@ Node* search_node(Node *first, int item) {
 
 void print_linked_list(Node *first) {
   if(!is_empty(first)) {
-    printf("%d ", first->item);
-
     print_linked_list(first->next_node);
+
+    printf("%d ", first->item);
   }
 }
