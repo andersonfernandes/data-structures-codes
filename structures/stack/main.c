@@ -6,6 +6,7 @@ int main() {
   Stack *stack = create_stack();
 
   printf("The stack is empty? %d\n", is_empty(stack));
+  printf("%d\n", pop(stack));
 
   push(stack, 14);
   push(stack, 16);
