@@ -44,5 +44,5 @@ int dequeue(Queue *queue) {
 }
 
 int is_empty(Queue *queue) {
-  return (queue == NULL);
+  return (queue->first == NULL);
 }

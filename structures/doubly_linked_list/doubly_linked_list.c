@@ -27,7 +27,7 @@ Node* insert_node(Node *first, int item) {
 Node* search(Node *first, int item) {
   Node *node;
 
-  for(node = first; node->next_node != NULL; node = node->next_node) {
+  for(node = first; node != NULL; node = node->next_node) {
     if(node->item == item) return node;
   }
 
