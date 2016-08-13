@@ -16,11 +16,12 @@ void push(Stack *stack, int item) {
 }
 
 int pop(Stack *stack) {
-  if (is_empty(stack)) return -1;
+  if(is_empty(stack)) return -1;
 
-  Node *return_top = (Node*) malloc(sizeof(Node));
   int item = stack->top->item;
+  Node *return_top = stack->top;
   stack->top = stack->top->next_node;
+
   free(return_top);
   return item;
 }

@@ -9,7 +9,7 @@ struct node {
 };
 
 struct queue {
-  Node* first;
+  Node *first;
 };
 
 Queue* create_queue() {
