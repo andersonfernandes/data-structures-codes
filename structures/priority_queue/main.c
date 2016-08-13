@@ -13,8 +13,13 @@ int main() {
 
   print_priority_queue(pqueue);
 
+  printf("Maximun %d\n", maximum(pqueue));
+
   dequeue(pqueue);
   dequeue(pqueue);
+
+  printf("Maximun %d\n", maximum(pqueue));
+
   dequeue(pqueue);
   dequeue(pqueue);
 
