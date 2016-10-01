@@ -67,7 +67,7 @@ void dfs(Graph *graph, int source) {
   Adjlist *adjlist = graph->vertices[source];
   while (adjlist != NULL) {
     if (!graph->visited[adjlist->item]) {
-    dfs(graph, adjlist->item);
+      dfs(graph, adjlist->item);
     }
 
     adjlist = adjlist->next;

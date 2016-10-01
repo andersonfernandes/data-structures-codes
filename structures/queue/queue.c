@@ -10,11 +10,13 @@ struct node {
 
 struct queue {
   Node *first;
+  Node *rear;
 };
 
 Queue* create_queue() {
   Queue *queue = (Queue*) malloc(sizeof(Queue));
   queue->first = NULL;
+  queue->rear = NULL;
 
   return queue;
 }
@@ -22,15 +24,19 @@ Queue* create_queue() {
 void enqueue(Queue *queue, int item) {
   Node *new_node = (Node*) malloc(sizeof(Node));
   new_node->item = item;
-  new_node->next_node = queue->first;
+  new_node->next_node = NULL;
 
-  queue->first = new_node;
+  if(queue->rear == NULL) {
+    queue->first = queue->rear = new_node;
+  } else {
+    queue->rear->next_node = new_node;
+    queue->rear = new_node;
+  }
 }
 
 int dequeue(Queue *queue) {
   int dequeued_item;
   if(queue->first == NULL) {
-    printf("Empty Queue!\n");
     return -1;
   } else {
     dequeued_item = queue->first->item;
